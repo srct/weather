@@ -13,9 +13,7 @@
 
 .weather-card.mdl-card {
     margin: auto;
-    margin-top: 10px;
     width: auto;
-    height: 250px;
     background: #425195;
 }
 .weather-card > .mdl-card__title,
@@ -24,7 +22,7 @@
 }
 
 .forecast-grid.mdl-grid {
-    width: 80%;
+    
 }
 .out-of-focus-card.mdl-card {
     margin: auto;
