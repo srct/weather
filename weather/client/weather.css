@@ -22,10 +22,15 @@
 }
 
 .forecast-grid.mdl-grid {
-    
+
 }
 .out-of-focus-card.mdl-card {
     margin: auto;
     width: auto;
     height: 30px;
+}
+
+.hourly-table.mdl-data-table {
+    width: auto;
+    margin: auto;
 }
