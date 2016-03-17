@@ -1,12 +1,20 @@
 <body>
   {{> weather}}
 </body>
-
 <template name="weather">
-  <h1><strong>Fairfax Campus</strong></h1>
-  <h1><i class="wi wi-day-cloudy wi-fw"></i> 76<i class="wi wi-fahrenheit"></i></h1>
-  <h2>Feels like 72<i class="wi wi-fahrenheit"></i></h2>
-  <hr>
+  <div class="weather-card mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__title">
+       <h1 class="mdl-card__title-text">Fairfax Campus<br /></h1>
+    </div>
+    <div class="mdl-card__supporting-text">
+        <h4>Partly Cloudy</h4>
+        <div class="temp-size">
+            <i class="wi wi-day-cloudy wi-fw"></i> 76<i class="wi wi-fahrenheit"></i>
+        </div><br />
+
+        Feels like 72<i class="wi wi-fahrenheit"></i><br />
+    </div>
+  </div>
   <h3><strong>Arlington Campus</strong> <i class="wi wi-day-sunny"></i> 82<i class="wi wi-fahrenheit"></i></h3>
   <hr>
   <h3><strong>Science and Technology Campus</strong> <i class="wi wi-day-sunny-overcast"></i> 74<i class="wi wi-fahrenheit"></i></h3>
