@@ -1,4 +1,8 @@
 /* CSS declarations go here */
+.bg {
+    background-color: #dedede;
+}
+
 .temp-size {
     font-size: 32pt;
 }
