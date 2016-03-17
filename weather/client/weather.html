@@ -1,5 +1,6 @@
 <body>
   {{> weather}}
+  {{> footer}}
 </body>
 <template name="weather">
 
@@ -69,4 +70,15 @@
   <hr>
   <h3><strong>Mason Ras-Al-Khaimah</strong> <i class="wi wi-hot"></i> 102<i class="wi wi-fahrenheit"></i></h3>
   <hr>
+</template>
+
+<template name="footer">
+    <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+            <div class="mdl-logo">SRCT Weather</div>
+        </div>
+        <div class="mdl-mini-footer__right-section">
+            A project of <a href="http://srct.gmu.edu/">Mason SRCT</a>
+        </div>
+    </footer>
 </template>
