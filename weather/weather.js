@@ -6,7 +6,6 @@ if (Meteor.isClient) {
 
   Template.weather.events({
 
-    }
   });
 }
 
