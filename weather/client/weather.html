@@ -1,40 +1,40 @@
 <body>
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <!-- Title -->
-          <span class="mdl-layout-title">Weather</span>
-        </div>
-        <!-- Tabs -->
-        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-          <a href="#fairfax" class="mdl-layout__tab is-active">Fairfax</a>
-          <a href="#arlington" class="mdl-layout__tab">Arlington</a>
-          <a href="#scitech" class="mdl-layout__tab">SciTech</a>
-          <a href="#korea" class="mdl-layout__tab">Mason Korea</a>
-          <a href="#saudi" class="mdl-layout__tab">Saudi Arabia</a>
-        </div>
-      </header>
-      <main class="mdl-layout__content">
-          <div class="bg">
-        <section class="mdl-layout__tab-panel is-active" id="fairfax">
-          <div class="page-content">{{> weather}}</div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="arlington">
-          <div class="page-content">{{> weather}}</div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="scitech">
-          <div class="page-content">{{> weather}}</div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="korea">
-          <div class="page-content">{{> weather}}</div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="saudi">
-          <div class="page-content">{{> weather}}</div>
-        </section>
-    </div>
-                 {{> footer}}
-      </main>
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Weather</span>
+            </div>
+            <!-- Tabs -->
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                <a href="#fairfax" class="mdl-layout__tab is-active">Fairfax</a>
+                <a href="#arlington" class="mdl-layout__tab">Arlington</a>
+                <a href="#scitech" class="mdl-layout__tab">SciTech</a>
+                <a href="#korea" class="mdl-layout__tab">Mason Korea</a>
+                <a href="#saudi" class="mdl-layout__tab">Saudi Arabia</a>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="bg">
+                <section class="mdl-layout__tab-panel is-active" id="fairfax">
+                    <div class="page-content">{{> weather}}</div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="arlington">
+                    <div class="page-content">{{> weather}}</div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="scitech">
+                    <div class="page-content">{{> weather}}</div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="korea">
+                    <div class="page-content">{{> weather}}</div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="saudi">
+                    <div class="page-content">{{> weather}}</div>
+                </section>
+            </div>
+            {{> footer}}
+        </main>
     </div>
 </body>
 
@@ -55,11 +55,11 @@
                 </div>
             </div>
         </div>
-        <div class="hourly-table mdl-cell mdl-cell--6-col mdl-shadow--4dp">
+        <div class="hourly-table mdl-cell mdl-cell--6-col mdl-shadow--4dp table-full-width">
             <table class="mdl-data-table mdl-js-data-table">
                 <thead>
                     <tr>
-                        <th class="mdl-data-table__cell--non-numeric">Hourly Forcast</th>
+                        <th class="mdl-data-table__cell--non-numeric table-full-width">Hourly Forcast</th>
                         <th class="mdl-data-table__cell--non-numeric">Condition</th>
                         <th class="mdl-data-table__cell--non-numeric"><i class="wi wi-fahrenheit"></i></th>
                         <th class="mdl-data-table__cell--non-numeric">Precipitation</th>
