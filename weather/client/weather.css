@@ -2,6 +2,9 @@
 .bg {
     background-color: #dedede;
 }
+.header-bg {
+    background-color: #006633;
+}
 
 .temp-size {
     font-size: 32pt;
