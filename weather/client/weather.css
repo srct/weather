@@ -2,7 +2,10 @@
 .bg {
     background-color: #dedede;
 }
-.header-bg {
+.header-bg > .mdl-layout__header,
+.header-bg > .mdl-layout__header-row,
+.header-bg > .mdl-layout__drawer,
+.header-bg > .mdl-layout__tab-bar {
     background-color: #006633;
 }
 

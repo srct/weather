@@ -1,20 +1,40 @@
 <body>
 
-    <div class="mdl-layout mdl-js-layout">
-        <header class="mdl-layout__header">
-            <div class="header-bg">
-            <div class="mdl-layout__header-row">
-                <span class="mdl-layout__title">Weather</span>
-            </div>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Weather</span>
         </div>
-        </header>
-        <main class="mdl-layout__content">
-            <div>
-                <div class="bg">
-                    {{> weather}} {{> footer}}
-                </div>
-            </div>
-        </main>
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+          <a href="#fairfax" class="mdl-layout__tab is-active">Fairfax</a>
+          <a href="#arlington" class="mdl-layout__tab">Arlington</a>
+          <a href="#scitech" class="mdl-layout__tab">SciTech</a>
+          <a href="#korea" class="mdl-layout__tab">Mason Korea</a>
+          <a href="#saudi" class="mdl-layout__tab">Saudi Arabia</a>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+          <div class="bg">
+        <section class="mdl-layout__tab-panel is-active" id="fairfax">
+          <div class="page-content">{{> weather}}</div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="arlington">
+          <div class="page-content">{{> weather}}</div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="scitech">
+          <div class="page-content">{{> weather}}</div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="korea">
+          <div class="page-content">{{> weather}}</div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="saudi">
+          <div class="page-content">{{> weather}}</div>
+        </section>
+    </div>
+                 {{> footer}}
+      </main>
     </div>
 </body>
 
@@ -23,7 +43,7 @@
         <div class="mdl-cell mdl-cell--6-col">
             <div class="weather-card mdl-card mdl-shadow--4dp">
                 <div class="mdl-card__title">
-                    <h1 class="mdl-card__title-text">Fairfax Campus<br /></h1>
+                    <h1 class="mdl-card__title-text">Current Conditions<br /></h1>
                 </div>
                 <div class="mdl-card__supporting-text">
                     <h4>Partly Cloudy</h4>
