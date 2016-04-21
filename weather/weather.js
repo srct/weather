@@ -1,3 +1,5 @@
+import '../imports/ui/dataview.js'
+
 if (Meteor.isClient) {
     for(var key in LOCATIONS) {
         var current = LOCATIONS[key];

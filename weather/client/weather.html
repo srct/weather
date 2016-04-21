@@ -1,20 +1,11 @@
 <body>
-  {{> weather}}
+    <p>YThe page did load, your browser is fine.</p>
+
+    {{#each data}}
+      {{> weather}}
+    {{/each}}
 </body>
 
 <template name="weather">
-  <h1><strong>Fairfax Campus</strong></h1>
-  <h1><i class="wi wi-day-cloudy wi-fw"></i> 76<i class="wi wi-fahrenheit"></i></h1>
-  <h2>Feels like 72<i class="wi wi-fahrenheit"></i></h2>
-  <hr>
-  <h3><strong>Arlington Campus</strong> <i class="wi wi-day-sunny"></i> 82<i class="wi wi-fahrenheit"></i></h3>
-  <hr>
-  <h3><strong>Science and Technology Campus</strong> <i class="wi wi-day-sunny-overcast"></i> 74<i class="wi wi-fahrenheit"></i></h3>
-  <hr>
-  <h3><strong>Smithsonian Conservation Biology Institute</strong> <i class="wi wi-day-storm-showers"></i> 68<i class="wi wi-fahrenheit"></i></h3>
-  <hr>
-  <h3><strong>Mason Korea</strong> <i class="wi wi-rain-mix"></i> 64<i class="wi wi-fahrenheit"></i></h3>
-  <hr>
-  <h3><strong>Mason Ras-Al-Khaimah</strong> <i class="wi wi-hot"></i> 102<i class="wi wi-fahrenheit"></i></h3>
-  <hr>
+    <p>{{current}}</p>
 </template>
