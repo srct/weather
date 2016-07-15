@@ -1,1 +1,1 @@
-import { WeatherData } from '../imports/api/weather-data.js';
+import { WeatherData } from '../imports/api/data.js';

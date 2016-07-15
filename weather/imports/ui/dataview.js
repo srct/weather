@@ -2,9 +2,9 @@ import { Template } from 'meteor/templating';
 
 import { WeatherData } from '../api/data.js';
 
-import '../weather.html';
+import '../../client/weather.html';
 
-Template.body.helpers({
+export default Template.body.helpers({
   current() {
     return WeatherData.find({});
   },
