@@ -1,3 +1,5 @@
 .meteor/local
 .meteor/meteorite
 weather/server/lib/secrets.js
+weather/mup.json
+weather/settings.json
