@@ -1,4 +1,4 @@
-import '../imports/ui/dataview.js'; //seems to be the problem?
+//import 'imports/ui/dataview.js'; //seems to be the problem?
 
 if (Meteor.isClient) {
     for(var key in LOCATIONS) {

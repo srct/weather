@@ -4,8 +4,8 @@ import { WeatherData } from '../api/data.js';
 
 import '../../client/weather.html';
 
-export default Template.body.helpers({
-  current() {
+Template.body.helpers({
+  export function current() {
     return WeatherData.find({});
   },
 });
