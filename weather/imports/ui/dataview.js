@@ -5,7 +5,7 @@ import { WeatherData } from '../api/data.js';
 import '../../client/weather.html';
 
 Template.body.helpers({
-  export function current() {
+  current() {
     return WeatherData.find({});
   },
 });
