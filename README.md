@@ -18,7 +18,7 @@ Setup
 
 To get started, make sure you have Meteor installed on your system.
 
-On OS X and Linux, this is as simple as typing `curl https://install.meteor.com/ | sh`
+On macOS and Linux, this is as simple as typing `curl https://install.meteor.com/ | sh`
 into your terminal. On Windows, you can download the installer [here](https://install.meteor.com/windows).
 
 Once you have meteor installed on your system, run the `meteor` command inside of the
@@ -34,3 +34,8 @@ TODO
 - Show data in a nice way
 - Create a beautiful frontend to view this information
 - Optimize interface for mobile
+
+---
+
+### Credit where due:
+[Rain Cloud](https://thenounproject.com/search/?q=Rain+cloud&i=6023) icon by Thomas Le Bas from [the Noun Project](https://thenounproject.com)
