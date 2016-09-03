@@ -18,17 +18,17 @@ Setup
 
 1. To get started, make sure you have Meteor installed on your system. On macOS and Linux, this is as simple as typing into your terminal:
 
- `curl https://install.meteor.com/ | sh`
+    `curl https://install.meteor.com/ | sh`
 
- On Windows, you can download the installer [here](https://install.meteor.com/windows).
+    On Windows, you can download the installer [here](https://install.meteor.com/windows).
 
 2. You will need to provide an API to weather so that the app will actually grab weather data. Navigate to `weather/server/lib/secrets.js.template` and follow the instructions included to setup the API key. Make sure you duplicate that file and name it `secrets.js`.  
 
 3. Once you have meteor installed on your system, navigate to the `weather/` directory and run in your terminal:
 
- `meteor`
+    `meteor`
 
- This will start a local server for you to use during development. Note that you will likely not have to restart this server while developing as meteor has live updating capabilities.
+    This will start a local server for you to use during development. Note that you will likely not have to restart this server while developing as meteor has live updating capabilities.
 
 TODO
 ---
