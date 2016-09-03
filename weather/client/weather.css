@@ -1,1 +1,48 @@
 /* CSS declarations go here */
+.bg {
+    background-color: #dedede;
+}
+.header-bg > .mdl-layout__header,
+.header-bg > .mdl-layout__header-row,
+.header-bg > .mdl-layout__drawer,
+.header-bg > .mdl-layout__tab-bar {
+    background-color: #006633;
+}
+
+.temp-size {
+    font-size: 32pt;
+}
+.detail-size {
+    font-size: 16pt;
+}
+.oof-size {
+    font-size: 24pt;
+}
+
+.weather-card.mdl-card {
+    margin: auto;
+    width: auto;
+    background: #425195;
+}
+.weather-card > .mdl-card__title,
+.weather-card > .mdl-card__supporting-text {
+  color: #fff;
+}
+
+.forecast-grid.mdl-grid {
+
+}
+.out-of-focus-card.mdl-card {
+    margin: auto;
+    width: auto;
+    height: 30px;
+}
+
+.hourly-table.mdl-data-table {
+    width: auto;
+    margin: auto;
+}
+
+.table-full-width {
+    width: 100%;
+}

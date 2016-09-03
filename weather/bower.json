@@ -1,0 +1,26 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "authors": [
+    "Nicholas Anderson <nanderson@nanderson.me>"
+  ],
+  "description": "Beautifully display live forcast data for the Mason community",
+  "keywords": [
+    "weather",
+    "gmu",
+    "SRCT"
+  ],
+  "license": "Apache2",
+  "homepage": "https://srct.gmu.edu",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    ".meteor/local/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "weather-icons": "~2.0.10"
+  }
+}
