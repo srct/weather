@@ -2,7 +2,3 @@
 import { Meteor } from 'meteor/meteor';
 
 import { WeatherData } from '../imports/api/weather-data.js';
-
-Meteor.startup(() => {
-  // code to run on server at startup
-});
