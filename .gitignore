@@ -1,8 +1,17 @@
 weather/mup.json
 weather/settings.json
-weather/.meteor
 weather/server/lib/secrets.js
-.meteor/local
-.meteor/meteorite
-*.~
-*.swp
+
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+
+# session
+Session.vim
+
+# temporary
+.netrwhist
+*~
+
+# auto-generated tag files
+tags
