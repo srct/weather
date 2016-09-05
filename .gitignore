@@ -1,7 +1,6 @@
-weather/mup.json
-weather/settings.json
 weather/server/lib/secrets.js
 
+# -- Vim .gitignores --
 # swap
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
