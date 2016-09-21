@@ -4,3 +4,5 @@ weather/.meteor
 weather/server/lib/secrets.js
 .meteor/local
 .meteor/meteorite
+*.~
+*.swp

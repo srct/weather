@@ -16,15 +16,19 @@ Please visit the [SRCT Wiki](http://wiki.srct.gmu.edu/) for more information on 
 Setup
 ---
 
-To get started, make sure you have Meteor installed on your system.
+1. To get started, make sure you have Meteor installed on your system. On macOS and Linux, this is as simple as typing into your terminal:
 
-On macOS and Linux, this is as simple as typing `curl https://install.meteor.com/ | sh`
-into your terminal. On Windows, you can download the installer [here](https://install.meteor.com/windows).
+    `curl https://install.meteor.com/ | sh`
 
-Once you have meteor installed on your system, run the `meteor` command inside of the
-`weather/` directory of the project files. This will start a local server for you to
-use during development. Note that you will likely not have to restart this server while
-developing as meteor has live updating capabilities.
+    On Windows, you can download the installer [here](https://install.meteor.com/windows).
+
+2. You will need to provide an API to weather so that the app will actually grab weather data. Navigate to `weather/server/lib/secrets.js.template` and follow the instructions included to setup the API key. Make sure you duplicate that file and name it `secrets.js`.  
+
+3. Once you have meteor installed on your system, navigate to the `weather/` directory and run in your terminal:
+
+    `meteor`
+
+    This will start a local server for you to use during development. Note that you will likely not have to restart this server while developing as meteor has live updating capabilities.
 
 TODO
 ---
