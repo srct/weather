@@ -58,14 +58,14 @@ function degToColor(deg) {
       text = "#a62380";
       break;
     default:
-      text = "F433FF";
+      text = "#F433FF";
 
   }
   return text;
 }
 
 
-function convertToF(CDeg){
+function convertToF(CDeg){ //a possible widely used function
   Fdeg = Cdeg*(9/5)+32;
   return Fdeg;
 }
