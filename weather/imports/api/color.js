@@ -4,6 +4,15 @@
 //this is not implemented yet and just a proof of concept to start work
 // will be implemented once we get live numbers to frontend
 
+//HOW TO USE
+
+//Pass colorMain(type,deg);
+//type = farenheit or celcius
+//  true = farenheit
+//  false = celcius
+//deg = degrees
+//you will have a color in #111111 format returned
+
 
 //var deg = 20; //degrees in numbers
 //var type = true; // type meaans farenheit or celcius
