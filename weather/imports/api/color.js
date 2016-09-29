@@ -4,21 +4,14 @@
 //this is not implemented yet and just a proof of concept to start work
 // will be implemented once we get live numbers to frontend
 
-//HOW TO USE
+//HOW TO USE:
+  //Pass colorMain(type,deg);
+  //type(boolean) = farenheit or celcius
+  //  true = farenheit
+  //  false = celcius
+  //deg = degrees
+  //you will have a color in #111111 format returned
 
-//Pass colorMain(type,deg);
-//type = farenheit or celcius
-//  true = farenheit
-//  false = celcius
-//deg = degrees
-//you will have a color in #111111 format returned
-
-
-//var deg = 20; //degrees in numbers
-//var type = true; // type meaans farenheit or celcius
-
-// true farenheit
-// false celcius
 
 //main function
 function colorMain(type,deg) {
@@ -76,17 +69,3 @@ function convertToF(CDeg){
   Fdeg = Cdeg*(9/5)+32;
   return Fdeg;
 }
-console.log(colorMain(true,0));
-console.log(colorMain(true,10));
-console.log(colorMain(true,20));
-console.log(colorMain(true,30));
-console.log(colorMain(true,40));
-console.log(colorMain(true,50));
-console.log(colorMain(true,60));
-console.log(colorMain(true,70));
-console.log(colorMain(true,80));
-console.log(colorMain(true,90));
-console.log(colorMain(true,100));
-console.log(colorMain(true,110));
-console.log(colorMain(true,120));
-console.log(colorMain(true,130));
