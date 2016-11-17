@@ -31,9 +31,16 @@ Template.weather.helpers({
 var weatherData = {};
 var weatherDataDependency = new Tracker.Dependency;
 Template.weather.onCreated(function(){
-  Meteor.call('getWeather', 38.830295, -77.307717, function(error, result) {
-    weatherData = result;
-    weatherDataDependency.changed();
+  Session.set("locationName", "FAIRFAX");
+  Tracker.autorun(function () {
+    var locName = Session.get("locationName");
+    var location = LOCATIONS[locName];
+
+    Meteor.call('getWeather', location.lat, location.long, function(error, result) {
+      weatherData = result;
+      document.title = "SRCT Weather • "+Math.round(result.data.currently.temperature)+"° F"
+      weatherDataDependency.changed();
+    });
   });
 });
 

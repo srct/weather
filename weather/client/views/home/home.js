@@ -1,5 +1,5 @@
 Template.home.events({
-  'click .locationTab' (event) {
+  'click' (event) {
     console.log(event);
   }
 });

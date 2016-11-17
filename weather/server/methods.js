@@ -33,6 +33,7 @@ function getWeather(latitude, longitude) {
       return curWeatherData;
     }
   } else {
+    console.log("Returning cached data.")
     //The data is still valid, return it
     return curWeatherData;
   }
