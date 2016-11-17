@@ -1,0 +1,38 @@
+<template name="home">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Weather</span>
+            </div>
+            <!-- Tabs -->
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                <a href="#fairfax" class="mdl-layout__tab is-active locationTab">Fairfax</a>
+                <a href="#arlington" class="mdl-layout__tab locationTab">Arlington</a>
+                <a href="#scitech" class="mdl-layout__tab locationTab">SciTech</a>
+                <a href="#korea" class="mdl-layout__tab locationTab">Mason Korea</a>
+                <a href="#saudi" class="mdl-layout__tab locationTab">Ras-Al-Khaimah</a>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="bg">
+                <section class="mdl-layout__tab-panel is-active" id="fairfax">
+                    <div class="page-content">{{> weather}}</div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="arlington">
+                    <div class="page-content">{{> weather}}</div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="scitech">
+                    <div class="page-content">{{> weather}}</div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="korea">
+                    <div class="page-content">{{> weather}}</div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="saudi">
+                    <div class="page-content">{{> weather}}</div>
+                </section>
+            </div>
+            {{> footer}}
+        </main>
+    </div>
+</template>

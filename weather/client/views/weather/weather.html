@@ -1,41 +1,3 @@
-<body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <!-- Title -->
-                <span class="mdl-layout-title">Weather</span>
-            </div>
-            <!-- Tabs -->
-            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-                <a href="#fairfax" class="mdl-layout__tab is-active">Fairfax</a>
-                <a href="#arlington" class="mdl-layout__tab">Arlington</a>
-                <a href="#scitech" class="mdl-layout__tab">SciTech</a>
-                <a href="#korea" class="mdl-layout__tab">Mason Korea</a>
-                <a href="#saudi" class="mdl-layout__tab">Ras-Al-Khaimah</a>
-            </div>
-        </header>
-        <main class="mdl-layout__content">
-            <div class="bg">
-                <section class="mdl-layout__tab-panel is-active" id="fairfax">
-                    <div class="page-content">{{> weather}}</div>
-                </section>
-                <section class="mdl-layout__tab-panel" id="arlington">
-                    <div class="page-content">{{> weather}}</div>
-                </section>
-                <section class="mdl-layout__tab-panel" id="scitech">
-                    <div class="page-content">{{> weather}}</div>
-                </section>
-                <section class="mdl-layout__tab-panel" id="korea">
-                    <div class="page-content">{{> weather}}</div>
-                </section>
-                <section class="mdl-layout__tab-panel" id="saudi">
-                    <div class="page-content">{{> weather}}</div>
-                </section>
-            </div>
-            {{> footer}}
-        </main>
-    </div>
-</body>
 
 <template name="weather">
     <div class="mdl-grid">
@@ -45,14 +7,14 @@
                     <h1 class="mdl-card__title-text">Current Conditions<br /></h1>
                 </div>
                 <div class="mdl-card__supporting-text">
-                    <h4>Partly Cloudy</h4>
+                    <h4>{{weatherData.data.currently.summary}}</h4>
                     <div class="temp-size">
-                        <i class="wi wi-day-cloudy wi-fw"></i> 76<i class="wi wi-fahrenheit"></i>
+                        <i class="wi wi-day-cloudy wi-fw"></i> {{roundNumber weatherData.data.currently.temperature}}<i class="wi wi-fahrenheit"></i>
                     </div>
                     <div class="detail-size">
-                        Feels like 72<i class="wi wi-fahrenheit"></i>
-                        <br /><br /><i class="wi wi-cloud"></i> No Rain today.  <i class="wi wi-wind wi-towards-nne"></i> 5mph NNE
-                        <br /><br /><i class="wi wi-sunset"></i> 7:22 PM EDT
+                        Feels like {{roundNumber weatherData.data.currently.apparentTemperature}}<i class="wi wi-fahrenheit"></i>
+                        <br /><br /><i class="wi wi-cloud"></i> {{precipitationWords}}  &nbsp;&nbsp;&nbsp;<i class="wi wi-wind wi-towards-{{windDirectionClass}}"></i> {{weatherData.data.currently.windSpeed}}mph {{windDirection}}
+                        <br /><br /><i class="wi wi-sunset"></i> {{formatTimestamp weatherData.data.currently.time}}
                     </div>
                 </div>
             </div>
@@ -193,18 +155,4 @@
             </div>
         </div>
     </div>
-</template>
-
-<template name="footer">
-    <footer class="mdl-mini-footer">
-        <div class="mdl-mini-footer__left-section">
-            <div class="mdl-logo">SRCT Weather</div>
-        </div>
-        <div class="mdl-mini-footer__right-section" style="align: right">
-            A project of Mason <a href="http://srct.gmu.edu/"><strong>SRCT</strong></a>, a registered student org.
-            <br />Read and <a href="https://git.gmu.edu//srct/weather/milestones/">contribute</a>
-            to our <a href="https://www.gnu.org/licenses/quick-guide-gplv3.html">freely-licensed</a>
-            <a href="http://git.gmu.edu/srct/weather/" target="_blank">source code</a>.
-        </div>
-    </footer>
 </template>
