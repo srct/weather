@@ -9,6 +9,7 @@ function getWeather(latitude, longitude) {
 
   //Check if there is data at all
   if(curWeatherData === undefined) {
+    console.log("Getting first time data.")
     var weatherData = getWeatherFromAPI(latitude, longitude);
     WeatherData.insert(weatherData);
     return curWeatherData;
@@ -16,8 +17,9 @@ function getWeather(latitude, longitude) {
 
   var date = new Date();
   var timeDiff = (date.getTime()) - curWeatherData.retrievalTime; //Subtract the data timestamp form cur time to get age
-  if(timeDiff > Meteor.settings.weatherCacheExpireTime) {
+  if(timeDiff > (Meteor.settings.weatherCacheExpireTime*1000)) {
     //Data is expired, retrieve again.
+    console.log("Data Age: "+timeDiff)
     console.log("Cache expired. Retrieving...")
     var weatherData = getWeatherFromAPI(latitude, longitude);
     if(weatherData === undefined) {
@@ -29,7 +31,7 @@ function getWeather(latitude, longitude) {
       //Technically the else isn't needed but it looks nice.
 
       //Save this data.
-      WeatherData.insert(curWeatherData);
+      WeatherData.insert(weatherData);
       return curWeatherData;
     }
   } else {

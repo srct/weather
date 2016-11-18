@@ -1,10 +1,12 @@
 Template.weather.helpers({
   weatherData: function() {
     weatherDataDependency.depend();
+    if(weatherData === undefined) return "...";
     return weatherData;
   },
   precipitationWords: function() {
     weatherDataDependency.depend();
+    if(weatherData === undefined) return "...";
     var precipProb = weatherData.data.currently.precipProbability;
     if(precipProb === 0) return "No Rain Expected";
     if(precipProb > 95) return "Bring an Umbrella";
@@ -13,17 +15,22 @@ Template.weather.helpers({
   },
   windDirection: function() {
     weatherDataDependency.depend();
+    if(weatherData === undefined) return "...";
     return degreesToWords(weatherData.data.currently.windBearing);
   },
   windDirectionClass: function() {
     weatherDataDependency.depend();
+    if(weatherData === undefined) return "...";
     return degreesToWords(weatherData.data.currently.windBearing).toLowerCase();
   },
   roundNumber: function(number) {
+    if(number === undefined) return "...";
     return Math.round(number);
   },
   formatTimestamp(timestamp) {
-    var d = new Date();
+    if(timestamp === undefined) return "...";
+    var d = new Date(timestamp*1000);
+    console.log("GOT: "+timestamp)
     return d.toLocaleString("en-us", { hour: 'numeric', minute: 'numeric', timeZoneName:'short'});
   }
 });
