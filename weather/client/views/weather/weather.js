@@ -12,7 +12,7 @@ Template.weather.helpers({
     if(precipProb === 0) return "No Rain Expected";
     if(precipProb > 95) return "Bring an Umbrella";
     if(precipProb > 100) return "Wat."; //Wait.
-    return precipProb+"%"; // Otherwise, return the percentage
+    return precipProb+"% Precipitation"; // Otherwise, return the percentage
   },
   //Converts degrees to words
   windDirection: function() {
@@ -83,6 +83,12 @@ Template.weather.helpers({
     }
     debugger;
     return hourDataArray.slice(startIndex, startIndex+12)
+  },
+  getDayNameFromTime: function(timestamp) {
+      var given = new Date(timestamp);
+      var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+      return days[ given.getDay() ];
   }
 });
 

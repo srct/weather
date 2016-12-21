@@ -44,83 +44,26 @@
                 </tbody>
             </table>
         </div>
+        {{#each dayWeather in weatherData.data.daily.data}}
         <div class="mdl-cell mdl-cell--4-col">
             <div class="out-of-focus-card mdl-card mdl-shadow--4dp">
                 <div class="mdl-card__title">
-                    <h1 class="mdl-card__title-text">Tomorrow<br /></h1>
+                    <h1 class="mdl-card__title-text">{{getDayNameFromTime dayWeather.time}}<br /></h1>
                 </div>
                 <div class="mdl-card__supporting-text">
-                    <h5>Partly Cloudy</h5>
+                    <h5>{{dayWeather.summary}}</h5>
                     <div class="oof-size">
-                        <i class="wi wi-day-cloudy wi-fw"></i> 81<i class="wi wi-fahrenheit"></i> / 48<i class="wi wi-fahrenheit"></i>
+                        <i class="wi {{convertIconName dayWeather.icon}} wi-fw"></i> {{roundNumber dayWeather.temperatureMax}}<i class="wi wi-fahrenheit"></i> / {{roundNumber dayWeather.temperatureMin}}<i class="wi wi-fahrenheit"></i>
+                    </div>
+                    <div class="detail-size">
+                        <br />
+                        {{precipitationWords dayWeather.precipProbability}}
+                        <br /><br />
                     </div>
                 </div>
             </div>
         </div>
-        <div class="mdl-cell mdl-cell--4-col">
-            <div class="out-of-focus-card mdl-card mdl-shadow--4dp">
-                <div class="mdl-card__title">
-                    <h1 class="mdl-card__title-text">Saturday<br /></h1>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    <h5>Partly Cloudy</h5>
-                    <div class="oof-size">
-                        <i class="wi wi-day-cloudy wi-fw"></i> 83<i class="wi wi-fahrenheit"></i> / 48<i class="wi wi-fahrenheit"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--4-col">
-            <div class="out-of-focus-card mdl-card mdl-shadow--4dp">
-                <div class="mdl-card__title">
-                    <h1 class="mdl-card__title-text">Sunday<br /></h1>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    <h5>Partly Cloudy</h5>
-                    <div class="oof-size">
-                        <i class="wi wi-day-cloudy wi-fw"></i> 78<i class="wi wi-fahrenheit"></i> / 48<i class="wi wi-fahrenheit"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--4-col">
-            <div class="out-of-focus-card mdl-card mdl-shadow--4dp">
-                <div class="mdl-card__title">
-                    <h1 class="mdl-card__title-text">Monday<br /></h1>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    <h5>Partly Cloudy</h5>
-                    <div class="oof-size">
-                        <i class="wi wi-day-cloudy wi-fw"></i> 75<i class="wi wi-fahrenheit"></i> / 48<i class="wi wi-fahrenheit"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--4-col">
-            <div class="out-of-focus-card mdl-card mdl-shadow--4dp">
-                <div class="mdl-card__title">
-                    <h1 class="mdl-card__title-text">Tuesday<br /></h1>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    <h5>Partly Cloudy</h5>
-                    <div class="oof-size">
-                        <i class="wi wi-day-cloudy wi-fw"></i> 72<i class="wi wi-fahrenheit"></i> / 48<i class="wi wi-fahrenheit"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--4-col">
-            <div class="out-of-focus-card mdl-card mdl-shadow--4dp">
-                <div class="mdl-card__title">
-                    <h1 class="mdl-card__title-text">Wednesday<br /></h1>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    <h5>Partly Cloudy</h5>
-                    <div class="oof-size">
-                        <i class="wi wi-day-cloudy wi-fw"></i> 67<i class="wi wi-fahrenheit"></i> / 48<i class="wi wi-fahrenheit"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{/each}}
+
     </div>
 </template>
