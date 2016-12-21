@@ -5,7 +5,8 @@
 .header-bg > .mdl-layout__header,
 .header-bg > .mdl-layout__header-row,
 .header-bg > .mdl-layout__drawer,
-.header-bg > .mdl-layout__tab-bar {
+.header-bg > .mdl-layout__tab-bar,
+.header-bg > .mdl-layout__tab {
     background-color: #006633;
 }
 
