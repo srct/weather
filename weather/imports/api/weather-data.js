@@ -13,7 +13,7 @@ WeatherData.schema = new SimpleSchema({
     },
     long: {
         type: Number,
-        label: "The logiute of the GMU Campus"
+        label: "The longiute of the GMU Campus"
     },
     data: {
         type: Object,
@@ -25,6 +25,8 @@ WeatherData.schema = new SimpleSchema({
     }
 })
 
+//I'm pretty sure these functions aren't used in the project anymore
+/*
 Meteor.methods({
     'weatherDataForLoc': function (lat, long) {
         // API_KEY is an environmental veriable, you can set it with a JS file in
@@ -53,6 +55,7 @@ export function refreshData() {
             lastUpdated: new Date(),
         });
         */
+        /*
         let location = {
             name: current.name,
             lat: current.lat,
@@ -64,3 +67,4 @@ export function refreshData() {
         WeatherData.insert(location);
     }
 }
+*/
