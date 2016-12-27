@@ -10,8 +10,20 @@ Template.weather.helpers({
     if(weatherData === undefined) return "...";
     var precipProb = weatherData.data.currently.precipProbability;
     if(precipProb === 0) return "No Rain Expected";
+    if(precipProb > 50 && precipProb < 95) return "Potential for Rain";
     if(precipProb > 95) return "Bring an Umbrella";
     if(precipProb > 100) return "Wat."; //Wait.
+    return precipProb+"% Precipitation"; // Otherwise, return the percentage
+  },
+  //Convert precipitation percentage to icons
+  precipitationIcons: function() {
+    weatherDataDependency.depend();
+    if(weatherData === undefined) return "...";
+    var precipProb = weatherData.data.currently.precipProbability;
+    if(precipProb === 0) return "cloud";
+    if(precipProb > 50 && precipProb < 95) return "showers";
+    if(precipProb > 95) return "umbrella";
+    if(precipProb > 100) return "alien"; //Wait.
     return precipProb+"% Precipitation"; // Otherwise, return the percentage
   },
   //Converts degrees to words
@@ -89,6 +101,42 @@ Template.weather.helpers({
       var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
       return days[ given.getDay() ];
+  },
+  getColorStyle: function(temp) {
+      var returning = "degree";
+      if(temp < 10) {
+          return returning + "0";
+      }
+      else if(temp >= 10 && temp < 20) {
+          return returning + "10";
+      }
+      else if(temp >= 20 && temp < 30) {
+          return returning + "20";
+      }
+      else if(temp >= 30 && temp < 40) {
+          return returning + "30";
+      }
+      else if(temp >= 40 && temp < 50) {
+          return returning + "40";
+      }
+      else if(temp >= 50 && temp < 60) {
+          return returning + "50";
+      }
+      else if(temp >= 60 && temp < 70) {
+          return returning + "60";
+      }
+      else if(temp >= 70 && temp < 80) {
+          return returning + "70";
+      }
+      else if(temp >= 80 && temp < 90) {
+          return returning + "80";
+      }
+      else if(temp >= 90 && temp < 100) {
+          return returning + "90";
+      }
+      else if(temp >= 100) {
+          return returning + "100";
+      }
   }
 });
 

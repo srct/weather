@@ -36,7 +36,7 @@
 .out-of-focus-card.mdl-card {
     margin: auto;
     width: auto;
-    height: 30px;
+    /* height: 30px; */
 }
 
 .hourly-table.mdl-data-table {
@@ -46,4 +46,38 @@
 
 .table-full-width {
     width: 100%;
+}
+
+.degree0.mdl-card {
+    background-color: #000000;
+}
+.degree10.mdl-card {
+    background-color: #222222;
+}
+.degree20.mdl-card {
+    background-color: #444444;
+}
+.degree30.mdl-card {
+    background-color: #666666;
+}
+.degree40.mdl-card {
+    background-color: #777777;
+}
+.degree50.mdl-card {
+    background-color: #888888;
+}
+.degree60.mdl-card {
+    background-color: #999999;
+}
+.degree70.mdl-card {
+    background-color: #aaaaaa;
+}
+.degree80.mdl-card {
+    background-color: #bbbbbb;
+}
+.degree90.mdl-card {
+    background-color: #dddddd;
+}
+.degree100.mdl-card {
+    background-color: #ffffff;
 }
