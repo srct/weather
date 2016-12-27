@@ -14,7 +14,7 @@
         </div>
         {{/if}}
         <div class="mdl-cell mdl-cell--12-col">
-            <div class="weather-card mdl-card mdl-shadow--4dp">
+            <div class="{{getColorStyle (roundNumber weatherData.data.currently.temperature)}} weather-card mdl-card mdl-shadow--4dp">
                 <div class="mdl-card__title">
                     <h1 class="mdl-card__title-text">Current Conditions<br /></h1>
                 </div>
@@ -58,7 +58,7 @@
         </div>
         {{#each dayWeather in weatherData.data.daily.data}}
         <div class="mdl-cell mdl-cell--4-col">
-            <div class="{{getColorStyle roundNumber dayWeather.temperatureMax}} out-of-focus-card mdl-card mdl-shadow--4dp">
+            <div class="{{getColorStyle (roundNumber dayWeather.temperatureMax)}} weather-card mdl-card mdl-shadow--4dp">
                 <div class="mdl-card__title">
                     <h1 class="mdl-card__title-text">{{getDayNameFromTime dayWeather.time}}<br /></h1>
                 </div>

@@ -101,39 +101,42 @@ Template.weather.helpers({
       return days[ given.getDay() ];
   },
   getColorStyle: function(temp) {
-      var returning = "degree";
       if(temp < 10) {
-          return returning + "0";
+          return "degree0";
       }
       else if(temp >= 10 && temp < 20) {
-          return returning + "10";
+          return "degree10";
       }
       else if(temp >= 20 && temp < 30) {
-          return returning + "20";
+          return "degree20";
       }
       else if(temp >= 30 && temp < 40) {
-          return returning + "30";
+          return "degree30";
       }
       else if(temp >= 40 && temp < 50) {
-          return returning + "40";
+          return "degree40";
       }
       else if(temp >= 50 && temp < 60) {
-          return returning + "50";
+          return "degree50";
       }
       else if(temp >= 60 && temp < 70) {
-          return returning + "60";
+          return "degree60";
       }
       else if(temp >= 70 && temp < 80) {
-          return returning + "70";
+          return "degree70";
       }
       else if(temp >= 80 && temp < 90) {
-          return returning + "80";
+          return "degree80";
       }
       else if(temp >= 90 && temp < 100) {
-          return returning + "90";
+          return "degree90";
       }
       else if(temp >= 100) {
-          return returning + "100";
+          return "degree100";
+      }
+      else {
+          Console.log(temp);
+          return temp;
       }
   }
 });
