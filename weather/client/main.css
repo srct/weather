@@ -30,6 +30,12 @@
   color: #fff;
 }
 
+.alert-card.mdl-card {
+    margin: auto;
+    width: auto;
+    background: #ee1111;
+}
+
 .forecast-grid.mdl-grid {
 
 }

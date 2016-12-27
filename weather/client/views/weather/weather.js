@@ -5,10 +5,9 @@ Template.weather.helpers({
     return weatherData;
   },
   //Convert precipitation percentage to words
-  precipitationWords: function() {
+  precipitationWords: function(precipProb) {
     weatherDataDependency.depend();
     if(weatherData === undefined) return "...";
-    var precipProb = weatherData.data.currently.precipProbability;
     if(precipProb === 0) return "No Rain Expected";
     if(precipProb > 50 && precipProb < 95) return "Potential for Rain";
     if(precipProb > 95) return "Bring an Umbrella";
@@ -16,10 +15,9 @@ Template.weather.helpers({
     return precipProb+"% Precipitation"; // Otherwise, return the percentage
   },
   //Convert precipitation percentage to icons
-  precipitationIcons: function() {
+  precipitationIcons: function(precipProb) {
     weatherDataDependency.depend();
     if(weatherData === undefined) return "...";
-    var precipProb = weatherData.data.currently.precipProbability;
     if(precipProb === 0) return "cloud";
     if(precipProb > 50 && precipProb < 95) return "showers";
     if(precipProb > 95) return "umbrella";

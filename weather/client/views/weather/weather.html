@@ -1,6 +1,18 @@
 
 <template name="weather">
     <div class="mdl-grid">
+        {{#if weatherData.alerts.title}}
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="alert-card weather-card mdl-card mdl-shadow--4dp">
+                <div class="mdl-card__title">
+                    <h1 class="mdl-card__title-text"><a href="{{weatherData.alerts.url}}">{{weatherData.alerts.title}}</a> until {{formatTimestamp weatherData.alerts.expires}}<br /></h1>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    {{waatherData.alerts.description}}
+                </div>
+            </div>
+        </div>
+        {{/if}}
         <div class="mdl-cell mdl-cell--12-col">
             <div class="weather-card mdl-card mdl-shadow--4dp">
                 <div class="mdl-card__title">
@@ -13,7 +25,7 @@
                     </div>
                     <div class="detail-size">
                         Feels like {{roundNumber weatherData.data.currently.apparentTemperature}}<i class="wi wi-fahrenheit"></i>
-                        <br /><br /><i class="wi wi-{{precipitationIcons}}"></i> {{precipitationWords}}  &nbsp;&nbsp;&nbsp;<i class="wi wi-wind wi-towards-{{windDirectionClass}}"></i> {{roundNumber weatherData.data.currently.windSpeed}}mph {{windDirection}}
+                        <br /><br /><i class="wi wi-{{precipitationIcons weatherData.data.currently.precipProbability}}"></i> {{precipitationWords weatherData.data.currently.precipProbability}}  &nbsp;&nbsp;&nbsp;<i class="wi wi-wind wi-towards-{{windDirectionClass}}"></i> {{roundNumber weatherData.data.currently.windSpeed}}mph {{windDirection}}
                         <!-- TODO: Change the icon based on time -->
                         <br /><br /><i class="wi wi-sunset"></i> {{formatTimestamp weatherData.data.currently.time}}
                     </div>
