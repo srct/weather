@@ -87,3 +87,9 @@
 .degree100.mdl-card {
     background-color: #ffffff;
 }
+.mdl-layout__tab-bar-right-button {
+    background-color: #006633;
+}
+.mdl-layout__tab-bar-left-button {
+    background-color: #006633;
+}
