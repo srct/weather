@@ -17,7 +17,7 @@ function getWeather(latitude, longitude) {
 
   var date = new Date();
   var timeDiff = (date.getTime()) - curWeatherData.retrievalTime; //Subtract the data timestamp form cur time to get age
-  if(timeDiff > (Meteor.settings.weatherCacheExpireTime*1000)) {
+  if(timeDiff > (Meteor.settings.weatherCacheExpireTime*10)) {
     //Data is expired, retrieve again.
     console.log("Data Age: "+timeDiff)
     console.log("Cache expired. Retrieving...")
