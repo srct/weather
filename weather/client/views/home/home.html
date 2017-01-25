@@ -1,0 +1,50 @@
+<template name="home">
+      <!-- MDL Fixed Layout Container -->
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header header-bg">
+      <!-- Header Container -->
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title  of Header -->
+          <span class="mdl-layout-title">Weather</span>
+        </div>
+        <!-- Tab Bar Container , and Tab links -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect header-bg" style="background: #006633;">
+            <a id="fairfax-tab-button" href="#fairfax" class="mdl-layout__tab is-active">Fairfax</a>
+            <a href="#arlington" class="mdl-layout__tab">Arlington</a>
+            <a href="#scitech" class="mdl-layout__tab">SciTech</a>
+            <a href="#korea" class="mdl-layout__tab">Mason Korea</a>
+        </div>
+      </header>
+        <!-- MDL Layout Header -->
+      <main class="mdl-layout__content">
+        <!-- "is-active" class to set the default active tab -->
+        <section class="mdl-layout__tab-panel is-active" id="fairfax">
+          <div class="page-content">
+            <div class="page-content">{{> weather}}</div>
+          </div>
+        </section>
+
+        <!-- Tab No 2-->
+        <section class="mdl-layout__tab-panel" id="arlington">
+          <div class="page-content">
+            <div class="page-content">{{> weather}}</div>
+          </div>
+        </section>
+
+        <!-- Tab No 3-->
+        <section class="mdl-layout__tab-panel" id="scitech">
+          <div class="page-content">
+           <div class="page-content">{{> weather}}</div>
+          </div>
+        </section>
+
+        <!-- Tab No 4-->
+        <section class="mdl-layout__tab-panel" id="korea">
+          <div class="page-content">
+            <div class="page-content">{{> weather}}</div>
+          </div>
+        </section>
+        {{> footer}}
+      </main>
+    </div>
+</template>
