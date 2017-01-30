@@ -100,7 +100,8 @@ Template.weather.helpers({
     return hourDataArray.slice(startIndex, startIndex+12)
   },
   getDayNameFromTime: function(timestamp) {
-      var given = new Date(timestamp);
+      var given = new Date(timestamp * 1000);
+      console.log(given);
       var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
       return days[ given.getDay() ];
   },
