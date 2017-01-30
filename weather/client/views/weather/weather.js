@@ -5,24 +5,30 @@ Template.weather.helpers({
     return weatherData;
   },
   //Convert precipitation percentage to words
-  precipitationWords: function(precipProb) {
+  precipitationWords: function(rawPrecipProb) {
     weatherDataDependency.depend();
+    var precipProb = rawPrecipProb * 100;
     if(weatherData === undefined) return "...";
-    if(precipProb === 0) return "No Rain Expected";
-    if(precipProb > 50 && precipProb < 95) return "Potential for Rain";
-    if(precipProb > 95) return "Bring an Umbrella";
+    if(precipProb === 0) return "No Precipitation";
+    if(precipProb >= 90) return "Bring an Umbrella ("+precipProb+"% chance)";
     if(precipProb > 100) return "Wat."; //Wait.
-    return precipProb+"% Precipitation"; // Otherwise, return the percentage
+    return precipProb+"% Chance of Precipitation"; // Otherwise, return the percentage
   },
   //Convert precipitation percentage to icons
-  precipitationIcons: function(precipProb) {
+  precipitationIcons: function(rawPrecipProb) {
     weatherDataDependency.depend();
+    var precipProb = rawPrecipProb * 100;
     if(weatherData === undefined) return "...";
     if(precipProb === 0) return "cloud";
     if(precipProb > 50 && precipProb < 95) return "showers";
     if(precipProb > 95) return "umbrella";
     if(precipProb > 100) return "alien"; //Wait.
     return precipProb+"% Precipitation"; // Otherwise, return the percentage
+  },
+  precipitationReadable: function(rawPrecipProb) {
+      weatherDataDependency.depend();
+      var precipProb = Math.round(rawPrecipProb * 100);
+      return precipProb;
   },
   //Converts degrees to words
   windDirection: function() {
@@ -45,14 +51,14 @@ Template.weather.helpers({
   formatTimestamp: function(timestamp) {
     if(timestamp === undefined) return "...";
     var d = new Date(timestamp*1000);
-    console.log("GOT: "+timestamp)
+    //console.log("GOT: "+timestamp)
     return d.toLocaleString("en-us", { hour: 'numeric', minute: 'numeric', timeZoneName:'short'});
   },
   //Formats unix time to just a 12 hour time
   formatTimestampToHour: function(timestamp) {
     if(timestamp === undefined) return "...";
     var d = new Date(timestamp*1000);
-    console.log("GOT: "+timestamp)
+    //console.log("GOT: "+timestamp)
     return d.toLocaleString("en-us", { hour: 'numeric'});
   },
   //Converts icon names from darksky to those that can be used by our css library
@@ -91,13 +97,11 @@ Template.weather.helpers({
         break;
       }
     }
-    debugger;
     return hourDataArray.slice(startIndex, startIndex+12)
   },
   getDayNameFromTime: function(timestamp) {
       var given = new Date(timestamp);
       var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-
       return days[ given.getDay() ];
   },
   getColorStyle: function(temp) {
@@ -135,7 +139,6 @@ Template.weather.helpers({
           return "degree100";
       }
       else {
-          Console.log(temp);
           return temp;
       }
   }
