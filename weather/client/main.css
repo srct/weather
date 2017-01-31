@@ -9,7 +9,10 @@
 .header-bg > .mdl-layout__tab {
     background-color: #006633;
 }
-
+.development-tag {
+    vertical-align: super;
+    font-size: 60%;
+}
 .temp-size {
     font-size: 32pt;
 }
