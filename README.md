@@ -22,7 +22,9 @@ Setup
 
     On Windows, you can download the installer [here](https://install.meteor.com/windows).
 
-2. You will need to provide an API to weather so that the app will actually grab weather data. Navigate to `weather/server/lib/secrets.js.template` and follow the instructions included to setup the API key. Make sure you duplicate that file and name it `secrets.js`.  
+2. You will need to provide an API to weather so that the app will actually grab weather data. Sign up for a Dark Sky API Key [here](https://darksky.net/dev/).
+
+    Once you have your API Key, navigate to the `weather/` directory and run in your terminal `export DARKSKY_API_KEY=` followed by your API Key to provide your key to the app.
 
 3. Once you have meteor installed on your system, navigate to the `weather/` directory and run in your terminal:
 
