@@ -7,7 +7,7 @@ Template.weather.helpers({
   //Convert precipitation percentage to words
   precipitationWords: function(rawPrecipProb) {
     weatherDataDependency.depend();
-    var precipProb = rawPrecipProb * 100;
+    var precipProb = Math.round(rawPrecipProb * 100);
     if(weatherData === undefined) return "...";
     if(precipProb === 0) return "No Precipitation";
     if(precipProb >= 90) return "Bring an Umbrella ("+precipProb+"% chance)";
