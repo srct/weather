@@ -49,7 +49,7 @@ function getWeather(location) {
     // Data is expired, retrieve again.
     console.log("Data Age: " + timeDiff)
     console.log("Cache expired. Retrieving...")
-    var weatherData = getWeatherFromAPI(latitude, longitude);
+    var weatherData = getWeatherFromAPI(location.lat, location.long);
 
     // Check if there was an error in the API call.
     if(weatherData === undefined) {
