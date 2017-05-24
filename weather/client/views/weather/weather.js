@@ -101,7 +101,7 @@ Template.weather.helpers({
   },
   getDayNameFromTime: function(timestamp) {
       var given = new Date(timestamp * 1000);
-      console.log(given);
+      //console.log(given);
       var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
       return days[ given.getDay() ];
   },
@@ -147,13 +147,16 @@ Template.weather.helpers({
 
 var weatherData = {};
 var weatherDataDependency = new Tracker.Dependency;
+
 Template.weather.onCreated(function(){
+  // Set default location to fairfax
   Session.set("locationName", "FAIRFAX");
+  // Function that is ran when any dependencies change
   Tracker.autorun(function () {
     var locName = Session.get("locationName");
     var location = LOCATIONS[locName];
-
-    Meteor.call('getWeather', location.lat, location.long, function(error, result) {
+    // Get weather for current location
+    Meteor.call('getWeather', location, function(error, result) {
       weatherData = result;
       document.title = "SRCT Weather • "+Math.round(result.data.currently.temperature)+"° F"
       weatherDataDependency.changed();
