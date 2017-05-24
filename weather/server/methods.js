@@ -6,8 +6,8 @@
  * https://guide.meteor.com/methods.html
  */
 Meteor.methods({
-  getWeather: function(latitude, longitude) {
-    return getWeather(latitude, longitude);
+  getWeather: function(location) {
+    return getWeather(location);
   }
 });
 
@@ -15,21 +15,23 @@ Meteor.methods({
  * Gets the most recent wether data based on the given Lat. and Long. and then
  * returns it. Only gets new data if we have left the acceptable cache time.
  *
- * @param latitude - A long that represents the Lat. of the weather data we
- *                   want.
- * @param longitude - A long that represents the Long. of the weather data we
- *                    want.
+ * @param location - A dictionary from locations.js containing latitude, longitude,
+ *                   and name of the campus we want to retrive the weather for.
+ *
  * @return weatherData - An object holding the API call data and retrieval time.
  */
-function getWeather(latitude, longitude) {
-  var curWeatherData = WeatherData.find({}, {sort: {retrievalTime: -1, limit: 1}}).fetch()[0];
+function getWeather(location) {
+  // Query the database for the weather data at given location
+  var curWeatherData = WeatherData.find({ locationName: { $eq: location.name }}, {sort: {retrievalTime: -1, limit: 1}}).fetch()[0];
 
   // Check if there is data at all
   if(curWeatherData === undefined) {
     console.log("Getting first time data.")
-    var weatherData = getWeatherFromAPI(latitude, longitude);
+    // If not, get data from API
+    var weatherData = getWeatherFromAPI(location.lat, location.long);
+    // Insert data into database
     WeatherData.insert(weatherData);
-    return curWeatherData;
+    return weatherData;
   }
 
   // Get current time
@@ -47,7 +49,7 @@ function getWeather(latitude, longitude) {
     // Data is expired, retrieve again.
     console.log("Data Age: " + timeDiff)
     console.log("Cache expired. Retrieving...")
-    var weatherData = getWeatherFromAPI(latitude, longitude);
+    var weatherData = getWeatherFromAPI(location.lat, location.long);
 
     // Check if there was an error in the API call.
     if(weatherData === undefined) {
@@ -93,9 +95,27 @@ function getWeatherFromAPI(latitude, longitude) {
     var date = new Date();
     var linuxTime = date.getTime(); // convert millis to seconds
 
+    // Find which location the data is for
+    var location = "undefined";
+    switch(latitude) {
+      case LOCATIONS.FAIRFAX.lat:
+        location = LOCATIONS.FAIRFAX.name;
+        break;
+      case LOCATIONS.ARLINGTON.lat:
+        location = LOCATIONS.ARLINGTON.name;
+        break;
+      case LOCATIONS.SCITECH.lat:
+        location = LOCATIONS.SCITECH.name;
+        break;
+      case LOCATIONS.KOREA.lat:
+        location = LOCATIONS.KOREA.name;
+        break;
+    }
+
     // Store the retrieval time with the data. We shouldn't get the same data
     // every time someone goes to the page.
     var weatherData = {
+      locationName: location,
       retrievalTime: linuxTime,
       data: result.data,
       error: false
