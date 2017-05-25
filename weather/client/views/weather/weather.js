@@ -1,3 +1,5 @@
+import moment from 'moment-timezone';
+
 Template.weather.helpers({
   weatherData: function() {
     weatherDataDependency.depend();
@@ -50,16 +52,20 @@ Template.weather.helpers({
   //Formats a unix timestamp a full human readable time
   formatTimestamp: function(timestamp) {
     if(timestamp === undefined) return "...";
-    var d = new Date(timestamp*1000);
-    //console.log("GOT: "+timestamp)
-    return d.toLocaleString("en-us", { hour: 'numeric', minute: 'numeric', timeZoneName:'short'});
+
+    // See https://momentjs.com/timezone/
+    var d = moment.tz(timestamp*1000, weatherData.data.timezone).format('YYYY-MM-DD HH:MM z');
+
+    return d.format();
   },
   //Formats unix time to just a 12 hour time
   formatTimestampToHour: function(timestamp) {
     if(timestamp === undefined) return "...";
-    var d = new Date(timestamp*1000);
-    //console.log("GOT: "+timestamp)
-    return d.toLocaleString("en-us", { hour: 'numeric'});
+
+    // See https://momentjs.com/timezone/
+    var time = moment.tz(timestamp*1000, weatherData.data.timezone).format('h A (z)');
+
+    return time;
   },
   //Converts icon names from darksky to those that can be used by our css library
   convertIconName: function(apiIcon) {
